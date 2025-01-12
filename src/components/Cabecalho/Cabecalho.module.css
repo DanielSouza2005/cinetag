@@ -4,4 +4,8 @@
     align-items: center;
     padding: 1.1em 10em;
     background-color: var(--preto);
+    position: fixed;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
 }

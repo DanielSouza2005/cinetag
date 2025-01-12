@@ -4,6 +4,7 @@ import Inicio from "pages/Inicio";
 import Cabecalho from "components/Cabecalho";
 import Rodape from "components/Rodape";
 import Container from "components/Container";
+import FavoritosProvider from "contexts/FavoritosContext";
 
 const AppRoutes = () => {
     return (
@@ -11,10 +12,12 @@ const AppRoutes = () => {
             <Cabecalho />
 
             <Container>
-                <Routes>
-                    <Route path="/" element={<Inicio />}></Route>
-                    <Route path="/favoritos" element={<Favoritos />}></Route>
-                </Routes>
+                <FavoritosProvider>
+                    <Routes>
+                        <Route path="/" element={<Inicio />}></Route>
+                        <Route path="/favoritos" element={<Favoritos />}></Route>
+                    </Routes>
+                </FavoritosProvider>
             </Container>
 
             <Rodape />

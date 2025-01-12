@@ -1,31 +1,53 @@
 import styles from "./Card.module.css";
 
+import { useFavoritoContext } from "contexts/FavoritosContext";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 
 const Card = ({ id, titulo, capa }) => {
 
+    const { addFavorito, verificaFavoritoExiste } = useFavoritoContext();
+
+    const clickIcone = () => {
+        addFavorito({
+            id,
+            titulo,
+            capa
+        });
+    };
+
     const iconProps = {
         alt: "Favoritar Filme",
         size: 25,
-        className: styles.favoritar
+        className: styles.favoritar,
+        onClick: clickIcone
     };
 
+    const FavoritoExiste = verificaFavoritoExiste({ id });
+
     return (
-        <div 
+        <div
             className={styles.container}
             key={id}
         >
-            <img 
+            <img
                 src={capa}
                 alt={titulo}
                 className={styles.capa}
             />
-            
+
             <h2>{titulo}</h2>
 
-            <MdFavoriteBorder 
-                {...iconProps} 
-            />
+            {
+                FavoritoExiste ?
+                    <MdFavorite
+                        {...iconProps}
+                    />
+                    :
+                    <MdFavoriteBorder
+                        {...iconProps}
+                    />
+            }
+
         </div>
     );
 };
