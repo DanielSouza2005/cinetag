@@ -2,6 +2,7 @@ import styles from "./Card.module.css";
 
 import { useFavoritoContext } from "contexts/FavoritosContext";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Card = ({ id, titulo, capa }) => {
 
@@ -29,13 +30,18 @@ const Card = ({ id, titulo, capa }) => {
             className={styles.container}
             key={id}
         >
-            <img
-                src={capa}
-                alt={titulo}
-                className={styles.capa}
-            />
+            <Link 
+                className={styles.link}
+                to={`/player/${id}`}
+            >
+                <img
+                    src={capa}
+                    alt={titulo}
+                    className={styles.capa}
+                />
 
-            <h2>{titulo}</h2>
+                <h2>{titulo}</h2>
+            </Link>
 
             {
                 FavoritoExiste ?

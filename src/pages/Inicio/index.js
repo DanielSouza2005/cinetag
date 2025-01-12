@@ -4,10 +4,11 @@ import Card from "components/Card";
 
 import styles from "./Inicio.module.css";
 import videos from "json/db.json";
+import Container from "components/Container";
 
 const Inicio = () => {
     return (
-        <>              
+        <Container>
             <Banner
                 imagem="home"
             />
@@ -20,13 +21,13 @@ const Inicio = () => {
                 {
                     videos.map((video) => {
                         return <Card
-                                    {...video}
-                                    key={video.id}
-                                />
+                            {...video}
+                            key={video.id}
+                        />
                     })
                 }
-            </section>            
-        </>
+            </section>
+        </Container>
     );
 };
 

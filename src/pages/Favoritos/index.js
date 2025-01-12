@@ -3,13 +3,14 @@ import styles from "./Favoritos.module.css";
 import Titulo from "components/Titulo";
 import Card from "components/Card";
 import { useFavoritoContext } from "contexts/FavoritosContext";
+import Container from "components/Container";
 
 const Favoritos = () => {
 
     const { favoritos } = useFavoritoContext();
 
     return (
-        <>
+        <Container>
             <Banner
                 imagem="favoritos"
             />
@@ -28,7 +29,7 @@ const Favoritos = () => {
                     })
                 }
             </section>
-        </>
+        </Container>
     );
 };
 

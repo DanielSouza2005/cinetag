@@ -20,3 +20,9 @@
     padding: 0 1em;    
     cursor: pointer;
 }
+
+.link {
+    text-decoration: none;
+    color: var(--preto);
+    text-align: left;
+}
