@@ -32,7 +32,7 @@ const Card = ({ id, titulo, capa }) => {
         >
             <Link 
                 className={styles.link}
-                to={`/player/${id}`}
+                to={`/${id}`}
             >
                 <img
                     src={capa}
