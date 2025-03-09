@@ -9,6 +9,7 @@ import PaginaBase from "pages/PaginaBase";
 const AppRoutes = () => {
     return (
         <BrowserRouter>
+
             <Routes>
                 <Route path="/" element={<PaginaBase />}>
                     <Route index element={<Inicio />}></Route>
@@ -17,6 +18,7 @@ const AppRoutes = () => {
                     <Route path="*" element={<NaoEncontrada />}></Route>                 
                 </Route>
             </Routes>
+            
         </BrowserRouter>
     );
 };
